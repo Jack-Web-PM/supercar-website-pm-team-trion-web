@@ -1,10 +1,11 @@
 $('.like-btn').on('click', function() {
     $(this).toggleClass('is-active');
- });
- $('.minus-btn').on('click', function(e) {
+});
+
+$('.item .minus-btn').on('click', function (e) {
     e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
+    var $this = $(e.currentTarget);
+    var $input = $this.siblings("input");
     var value = parseInt($input.val());
  
     if (value > 1) {
@@ -16,10 +17,10 @@ $('.like-btn').on('click', function() {
     $input.val(value);
 });
  
-$('.plus-btn').on('click', function(e) {
+$('.item .plus-btn').on('click', function (e) {
     e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
+    var $this = $(e.currentTarget);
+    var $input = $this.siblings("input");
     var value = parseInt($input.val());
  
     if (value < 100) {
